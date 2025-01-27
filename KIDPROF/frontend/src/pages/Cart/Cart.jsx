@@ -31,7 +31,7 @@ const Cart = () => {
                   <p>{item.name}</p>
                   <p>{item.price} Lei</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>{item.toy_price*cartItems[item._id]}{currency}</p>
+                  <p>{item.price*cartItems[item._id]} {currency}</p>
                   <p onClick={()=>removeFromCart(item._id)} className='cross'>x</p>
 
                 </div>
@@ -57,12 +57,12 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>{ getTotalCartAmount()===0?0:getTotalCartAmount()+deliveryCharge}{currency}</b>
+              <b>{ getTotalCartAmount()===0?0:getTotalCartAmount()+ deliveryCharge}{currency}</b>
             </div>
             </div>
           <button onClick={()=>navigate('/order')}>FINALIZEAZA COMANDA</button>
         </div>
-        <div className="cart-promocode">
+        {/* <div className="cart-promocode">
           <div>
             <p>Dacă aveți un cod promoțional, introduceți-l aici</p>
             <div className='cart-promocode-input'>
@@ -70,7 +70,7 @@ const Cart = () => {
               <button>Submit</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
