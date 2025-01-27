@@ -8,7 +8,6 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import MyOrders from './pages/MyOrders/MyOrders'
 import ExploreList from './components/ExploreList/ExploreList'
-import IconLoop from './pages/SearchLoop/IconLoop'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify/Verify'
@@ -16,10 +15,7 @@ import Verify from './pages/Verify/Verify'
 const App = () => {
 
   const [showLogin,setShowLogin]=useState(false)
-  const handleSearch = (query) => {
-    console.log("Search term:", query);
-    // Perform a search action, like filtering a list or making an API call
-  };
+  
 
   return (
     <>
@@ -27,13 +23,13 @@ const App = () => {
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}    
      <div className='app'>
       <Navbar setShowLogin={setShowLogin}/>
-      <IconLoop onSearch={handleSearch} />
+      
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/explore' element={<ExploreList/>} />
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/order' element={<PlaceOrder/>}/>
-        <Route path='/myorder' element={<MyOrders/>}/>
+        <Route path='/myorders' element={<MyOrders/>}/>
         <Route path='/verify' element={<Verify />}/>
       </Routes>
     </div>
