@@ -1,2 +1,2 @@
 exclude:
-  - KIDPROF/node_modules
+  - backend/node_modules
